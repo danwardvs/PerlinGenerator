@@ -1,6 +1,6 @@
 /*
  * Main
- * This is the main for 12 Num Baseball
+ * Sets up Allegro stuffs
  * Calls state machine update and draw functions
  * 2017/11/14
  */
@@ -12,7 +12,6 @@
 
 #include <mouseListener.h>
 #include <keyListener.h>
-#include <joystickListener.h>
 
 #include "init.h"
 #include "state.h"
@@ -41,7 +40,6 @@ ALLEGRO_DISPLAY *display = nullptr;
 // Input listener wrapper classes
 mouseListener m_listener;
 keyListener k_listener;
-
 
 // Delete game state and free state resources
 void clean_up(){
@@ -104,7 +102,6 @@ void setup(){
   // Controls
   al_install_keyboard();
   al_install_mouse();
-  al_install_joystick();
 
   // GFX addons
   al_init_image_addon();
@@ -113,10 +110,6 @@ void setup(){
   // Font
   al_init_ttf_addon();
 
-  // Audio
-  al_install_audio();
-  al_init_acodec_addon();
-  al_reserve_samples( 20);
 
   // Aquire screen
 
@@ -134,7 +127,6 @@ void setup(){
   al_register_event_source( event_queue, al_get_display_event_source(display));
   al_register_event_source( event_queue, al_get_timer_event_source(timer));
   al_register_event_source( event_queue, al_get_keyboard_event_source());
-  al_register_event_source( event_queue, al_get_joystick_event_source());
 
   // Timer
   al_start_timer(timer);

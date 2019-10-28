@@ -11,7 +11,7 @@ Noise::Noise(){
   int width=800;
   int height=600;
 
-  float octaveCount = 7;
+  float octaveCount = 6.5;
 
   for(int i=0; i<octaveCount; i++){
     std::cout<<"Generated octave "<<i<<" of "<<octaveCount<<".\n";
@@ -74,6 +74,8 @@ Noise::Noise(){
 
 
 }
+
+
 
 // Destory Noise
 Noise::~Noise(){

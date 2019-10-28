@@ -1,6 +1,6 @@
 /**
  * MENU
- * A.D.S. Games
+ * Danny Van Stemp
  * 06/05/2017
 **/
 #ifndef MENU_H
@@ -14,11 +14,8 @@
 
 #include "keyListener.h"
 #include "mouseListener.h"
-#include "joystickListener.h"
 #include "tools.h"
 #include "state.h"
-#include "Pixel.h"
-#include "Spawner.h"
 
 // Menu
 class menu : public state{
@@ -30,22 +27,6 @@ class menu : public state{
     void draw();
 
   private:
-
-    int r=100;
-    int b=100;
-    int g=100;
-    int angle;
-    float x=0;
-    float y=0;
-    float x1=0;
-    float y1=0;
-    std::vector<Pixel> gamePixels;
-    std::vector<Spawner> gameSpawners;
-
-    ALLEGRO_BITMAP *particle;
-    ALLEGRO_BITMAP *perlin;
-    ALLEGRO_BITMAP *perlin_2;
-
 
 
 

@@ -15,12 +15,8 @@
 
 #include "keyListener.h"
 #include "mouseListener.h"
-#include "joystickListener.h"
 #include "tools.h"
 #include "state.h"
-#include "Pixel.h"
-#include "Spawner.h"
-#include "vector"
 
 // Noise
 class Noise : public state{

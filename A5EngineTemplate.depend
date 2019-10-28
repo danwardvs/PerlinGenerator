@@ -269,7 +269,7 @@
 	<iostream>
 	<allegro5/allegro.h>
 
-1572305559 source:/home/danwardvs/Documents/PerlinGenerator/src/main.cpp
+1572306634 source:/home/danwardvs/Documents/PerlinGenerator/src/main.cpp
 	<allegro5/allegro.h>
 	<allegro5/allegro_primitives.h>
 	<allegro5/allegro_image.h>
@@ -277,7 +277,6 @@
 	<allegro5/allegro_acodec.h>
 	<mouseListener.h>
 	<keyListener.h>
-	<joystickListener.h>
 	"init.h"
 	"state.h"
 	"menu.h"
@@ -286,7 +285,7 @@
 1572303980 /home/danwardvs/Documents/PerlinGenerator/include/mouseListener.h
 	<allegro5/allegro.h>
 
-1572303980 /home/danwardvs/Documents/PerlinGenerator/include/menu.h
+1572306511 /home/danwardvs/Documents/PerlinGenerator/include/menu.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_image.h>
 	<allegro5/allegro_font.h>
@@ -294,11 +293,8 @@
 	<vector>
 	"keyListener.h"
 	"mouseListener.h"
-	"joystickListener.h"
 	"tools.h"
 	"state.h"
-	"Pixel.h"
-	"Spawner.h"
 
 1572303980 /home/danwardvs/Documents/PerlinGenerator/include/tools.h
 	<string>
@@ -320,7 +316,7 @@
 	"Pixel.h"
 	"tools.h"
 
-1572305909 /home/danwardvs/Documents/PerlinGenerator/include/Noise.h
+1572306274 /home/danwardvs/Documents/PerlinGenerator/include/Noise.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_image.h>
 	<allegro5/allegro_font.h>
@@ -329,20 +325,16 @@
 	<vector>
 	"keyListener.h"
 	"mouseListener.h"
-	"joystickListener.h"
 	"tools.h"
 	"state.h"
-	"Pixel.h"
-	"Spawner.h"
-	"vector"
 
-1572303980 source:/home/danwardvs/Documents/PerlinGenerator/src/menu.cpp
+1572306637 source:/home/danwardvs/Documents/PerlinGenerator/src/menu.cpp
 	"menu.h"
 
 1572303980 source:/home/danwardvs/Documents/PerlinGenerator/src/mouseListener.cpp
 	"mouseListener.h"
 
-1572305361 source:/home/danwardvs/Documents/PerlinGenerator/src/Noise.cpp
+1572306464 source:/home/danwardvs/Documents/PerlinGenerator/src/Noise.cpp
 	"Noise.h"
 
 1572303980 source:/home/danwardvs/Documents/PerlinGenerator/src/Pixel.cpp
