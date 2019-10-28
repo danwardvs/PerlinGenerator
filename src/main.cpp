@@ -41,7 +41,7 @@ ALLEGRO_DISPLAY *display = nullptr;
 // Input listener wrapper classes
 mouseListener m_listener;
 keyListener k_listener;
-joystickListener j_listener;
+
 
 // Delete game state and free state resources
 void clean_up(){
@@ -174,8 +174,6 @@ void update(){
     // Update listeners
     m_listener.update();
     k_listener.update();
-    j_listener.update();
-
     // Update state
     currentState -> update();
   }
@@ -186,15 +184,6 @@ void update(){
   // Keyboard
   else if( ev.type == ALLEGRO_EVENT_KEY_DOWN || ev.type == ALLEGRO_EVENT_KEY_UP){
     k_listener.on_event( ev.type, ev.keyboard.keycode);
-  }
-  // Joystick
-  else if( ev.type == ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN || ev.type == ALLEGRO_EVENT_JOYSTICK_BUTTON_UP){
-    j_listener.on_event( ev.type, ev.joystick.button);
-  }
-  // Joystick plugged or unplugged
-  else if( ev.type == ALLEGRO_EVENT_JOYSTICK_CONFIGURATION){
-    al_reconfigure_joysticks();
-    joystick_enabled = (al_get_num_joysticks() > 0);
   }
 
   // Drawing

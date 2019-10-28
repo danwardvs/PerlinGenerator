@@ -10,6 +10,7 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
+#include <allegro5/allegro_primitives.h>
 #include <vector>
 
 #include "keyListener.h"
@@ -41,6 +42,7 @@ class Noise : public state{
     std::vector<std::vector<float>> generate_smooth_noise(int,int,int);
 
     ALLEGRO_BITMAP *sprite;
+    ALLEGRO_BITMAP *generated_bitmap;
 
 
 

@@ -50,24 +50,28 @@ Noise::Noise(){
 
     std::cout<<"Drawing\n";
 
+    ALLEGRO_BITMAP *oldTarget;
+    oldTarget = al_get_target_bitmap();
+    generated_bitmap = al_create_bitmap(width,height);
 
-  ALLEGRO_BITMAP *newTarget;
-  newTarget = al_create_bitmap(width,height);
-
-  al_set_target_bitmap(newTarget);
-
+    al_set_target_bitmap(generated_bitmap);
+    al_draw_filled_rectangle(0,0,width,height, al_map_rgb(255,255,255));
 
    for(int i=0;i<perlin_noise.size();i++){
 
     for(int j=0; j<perlin_noise[0].size();j++){
-      std::cout<<"Drawing row "<<i<<", column "<<j<<" of "<<perlin_noise.size()<<".\n";
+      //std::cout<<"Drawing row "<<i<<", column "<<j<<" of "<<perlin_noise.size()<<".\n";
 
       //al_put_blended_pixel(i,j,al_map_rgba_f(perlin_noise[i][j],perlin_noise[i][j],perlin_noise[i][j],perlin_noise[i][j]));
         al_draw_tinted_bitmap(sprite,al_map_rgba_f(perlin_noise[i][j],perlin_noise[i][j],perlin_noise[i][j],perlin_noise[i][j]),i,j,0);
 
     }
   }
-  al_save_bitmap("perlin.png",newTarget);
+  al_save_bitmap("perlin.png",generated_bitmap);
+
+  al_set_target_bitmap(oldTarget);
+
+
 
 }
 
@@ -145,7 +149,8 @@ void Noise::draw(){
 
 
   // Background
-  //al_clear_to_color( al_map_rgb(0,50,0));
+  al_clear_to_color( al_map_rgb(0,0,0));
+  al_draw_bitmap(generated_bitmap,0,0,0);
 
 
 
