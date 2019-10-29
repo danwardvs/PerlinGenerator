@@ -5,8 +5,8 @@ Noise::Noise(){
 
   std::cout<<"Starting generation\n";
 
-  int width=800;
-  int height=600;
+  int width=400;
+  int height=400;
 
   sprite = tools::load_bitmap_ex("pixel.png");
 
