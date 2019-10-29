@@ -37,11 +37,8 @@
 			<Add directory="include" />
 		</Linker>
 		<Unit filename="include/Noise.h" />
-		<Unit filename="include/Pixel.h" />
-		<Unit filename="include/Spawner.h" />
 		<Unit filename="include/globals.h" />
 		<Unit filename="include/init.h" />
-		<Unit filename="include/joystickListener.h" />
 		<Unit filename="include/keyListener.h" />
 		<Unit filename="include/menu.h" />
 		<Unit filename="include/mouseListener.h" />
@@ -52,10 +49,7 @@
 		<Unit filename="include/state.h" />
 		<Unit filename="include/tools.h" />
 		<Unit filename="src/Noise.cpp" />
-		<Unit filename="src/Pixel.cpp" />
-		<Unit filename="src/Spawner.cpp" />
 		<Unit filename="src/init.cpp" />
-		<Unit filename="src/joystickListener.cpp" />
 		<Unit filename="src/keyListener.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/menu.cpp" />
