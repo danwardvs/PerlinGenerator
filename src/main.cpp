@@ -114,7 +114,7 @@ void setup(){
   // Aquire screen
 
   //al_set_new_display_flags(ALLEGRO_FULLSCREEN);
-  display = al_create_display(800, 600);
+  display = al_create_display(400, 300);
 
   if( !display)
     tools::abort_on_error( "Screen could not be created", "Error");

@@ -28,6 +28,11 @@ class menu : public state{
 
   private:
 
+    ALLEGRO_FONT *menu_font;
+    int width=800;
+    int height=600;
+    float octave_count=6.5f;
+
 
 
 

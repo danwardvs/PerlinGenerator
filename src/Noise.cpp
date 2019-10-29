@@ -5,11 +5,13 @@ Noise::Noise(){
 
   std::cout<<"Starting generation\n";
 
+  int width=800;
+  int height=600;
+
   sprite = tools::load_bitmap_ex("pixel.png");
 
 
-  int width=800;
-  int height=600;
+
 
   float octaveCount = 6.5;
 
