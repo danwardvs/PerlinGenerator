@@ -9,4 +9,5 @@ Basic features are:
 # Dependencies
 
 -Allegro 5
+
 I use 5.2 but any version should work
