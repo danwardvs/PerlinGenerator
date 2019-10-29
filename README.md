@@ -6,7 +6,7 @@ Basic features are:
 - Control the octave count used to generate the noise
 - Choose between solid or transparent background
 
-![Alt text](bin/sample.png)
+![Alt text](../master/bin/sample.png)
 
 # Dependencies
 
