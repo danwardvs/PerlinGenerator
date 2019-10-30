@@ -1,22 +1,24 @@
 #include "Noise.h"
 
+
+int Noise::width = 800;
+int Noise::height = 600;
+int Noise::octave_count=7;
+
+ALLEGRO_DISPLAY *Noise::display = nullptr;
 // Init Noise
 Noise::Noise(){
 
   std::cout<<"Starting generation\n";
 
-  int width=400;
-  int height=400;
 
   sprite = tools::load_bitmap_ex("pixel.png");
 
+  al_resize_display(Noise::display,Noise::width,Noise::height);
 
 
-
-  float octaveCount = 6.5;
-
-  for(int i=0; i<octaveCount; i++){
-    std::cout<<"Generated octave "<<i<<" of "<<octaveCount<<".\n";
+  for(int i=0; i<Noise::octave_count; i++){
+    std::cout<<"Generated octave "<<i<<" of "<<Noise::octave_count<<".\n";
     smooth_noise.push_back(generate_smooth_noise(width,height,pow(2,i)));
   }
 
@@ -29,10 +31,10 @@ Noise::Noise(){
   perlin_noise.resize(width,std::vector<float>(height,0));
 
 
-  for(int i=octaveCount-1;i>0;i--){
+  for(int i=Noise::octave_count-1;i>0;i--){
     amplitude *= persistance;
     totalAmplitude += amplitude;
-    std::cout<<"Blended octave "<<i<<" of "<<octaveCount<<".\n";
+    std::cout<<"Blended octave "<<i<<" of "<<Noise::octave_count<<".\n";
 
 
     for(int j=0; j<width; j++){
@@ -77,7 +79,16 @@ Noise::Noise(){
 
 }
 
+void Noise::setParams(int newHeight, int newWidth, float newOctaveCount){
+  Noise::width = newWidth;
+  Noise::height = newHeight;
+  Noise::octave_count==newOctaveCount;
 
+}
+
+void Noise::setDisplay(ALLEGRO_DISPLAY *newDisplay){
+  display = newDisplay;
+}
 
 // Destory Noise
 Noise::~Noise(){

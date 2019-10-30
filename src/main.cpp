@@ -115,6 +115,7 @@ void setup(){
 
   //al_set_new_display_flags(ALLEGRO_FULLSCREEN);
   display = al_create_display(400, 300);
+  Noise::setDisplay(display);
 
   if( !display)
     tools::abort_on_error( "Screen could not be created", "Error");

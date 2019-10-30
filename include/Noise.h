@@ -27,6 +27,8 @@ class Noise : public state{
     void update();
     void draw();
 
+    static void setParams(int newWidth, int newHeight, float newOctaveCount);
+    static void setDisplay(ALLEGRO_DISPLAY *newDisplay);
   private:
 
     std::vector<std::vector<float>>  generate_white_noise(int,int);
@@ -40,6 +42,10 @@ class Noise : public state{
     ALLEGRO_BITMAP *sprite;
     ALLEGRO_BITMAP *generated_bitmap;
 
+    static int width;
+    static int height;
+    static int octave_count;
+    static ALLEGRO_DISPLAY *display;
 
 
 
