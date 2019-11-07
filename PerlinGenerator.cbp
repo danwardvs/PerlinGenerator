@@ -36,6 +36,7 @@
 			<Add option="-lallegro_acodec" />
 			<Add directory="include" />
 		</Linker>
+		<Unit filename="include/Logger.h" />
 		<Unit filename="include/Noise.h" />
 		<Unit filename="include/globals.h" />
 		<Unit filename="include/init.h" />
@@ -48,6 +49,7 @@
 		<Unit filename="include/rapidxml_utils.hpp" />
 		<Unit filename="include/state.h" />
 		<Unit filename="include/tools.h" />
+		<Unit filename="src/Logger.cpp" />
 		<Unit filename="src/Noise.cpp" />
 		<Unit filename="src/init.cpp" />
 		<Unit filename="src/keyListener.cpp" />

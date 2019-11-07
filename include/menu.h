@@ -33,6 +33,8 @@ class menu : public state{
     int width=800;
     int height=600;
     int octave_count=7;
+    std::string path;
+    bool background;
 
 
 

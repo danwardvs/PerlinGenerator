@@ -4,6 +4,8 @@
 int Noise::width = 800;
 int Noise::height = 600;
 int Noise::octave_count=7;
+std::string Noise::path = "perlin.png";
+bool Noise::background = true;
 
 ALLEGRO_DISPLAY *Noise::display = nullptr;
 // Init Noise
@@ -54,12 +56,18 @@ Noise::Noise(){
 
     std::cout<<"Drawing\n";
 
+
+
+
     ALLEGRO_BITMAP *oldTarget;
     oldTarget = al_get_target_bitmap();
     generated_bitmap = al_create_bitmap(width,height);
 
     al_set_target_bitmap(generated_bitmap);
-    al_draw_filled_rectangle(0,0,width,height, al_map_rgb(255,255,255));
+
+    if(Noise::background)
+      al_draw_filled_rectangle(0,0,width,height, al_map_rgb(255,255,255));
+
 
    for(int i=0;i<perlin_noise.size();i++){
 
@@ -67,13 +75,24 @@ Noise::Noise(){
       //std::cout<<"Drawing row "<<i<<", column "<<j<<" of "<<perlin_noise.size()<<".\n";
 
       //al_put_blended_pixel(i,j,al_map_rgba_f(perlin_noise[i][j],perlin_noise[i][j],perlin_noise[i][j],perlin_noise[i][j]));
+
+
         al_draw_tinted_bitmap(sprite,al_map_rgba_f(perlin_noise[i][j],perlin_noise[i][j],perlin_noise[i][j],perlin_noise[i][j]),i,j,0);
 
     }
   }
-  al_save_bitmap("perlin.png",generated_bitmap);
+  if(al_save_bitmap(path.c_str(),generated_bitmap)){
+    std::cout<<"Successfully saved as " << path.c_str() <<"\n";
+
+  }else{
+    std::cout<<"Failed to save as " << path.c_str() << ". Can be invalid file extention or invalid/lacking permissions for directory.\n";
+
+  };
 
   al_set_target_bitmap(oldTarget);
+
+
+  al_draw_bitmap(generated_bitmap,0,0,0);
 
 
 
@@ -98,8 +117,17 @@ void Noise::setOctaveCount(int octaveCount){
   Noise::octave_count = octaveCount;
 }
 
+void Noise::setPath(std::string newPath){
+  Noise::path = newPath;
+}
+
 void Noise::setDisplay(ALLEGRO_DISPLAY *newDisplay){
   display = newDisplay;
+}
+
+void Noise::setBackground(bool newBackground){
+  Noise::background = newBackground;
+
 }
 
 // Destory Noise
@@ -176,7 +204,7 @@ void Noise::draw(){
 
 
   // Background
-  al_clear_to_color( al_map_rgb(0,0,0));
+  al_clear_to_color( al_map_rgb(255,255,255));
   al_draw_bitmap(generated_bitmap,0,0,0);
 
 

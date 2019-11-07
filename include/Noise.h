@@ -32,9 +32,14 @@ class Noise : public state{
     static void setOctaveCount(int);
     static void setParams(int newWidth, int newHeight, float newOctaveCount);
     static void setDisplay(ALLEGRO_DISPLAY *newDisplay);
+    static void setPath(std::string);
+    static void setBackground(bool);
+
 
     static int getWidth(){return width;}
     static int getHeight(){return height;}
+    static std::string getPath(){return path;}
+    static bool getBackground(){return background;}
 
   private:
 
@@ -53,6 +58,8 @@ class Noise : public state{
     static int height;
     static int octave_count;
     static ALLEGRO_DISPLAY *display;
+    static std::string path;
+    static bool background;
 
 
 

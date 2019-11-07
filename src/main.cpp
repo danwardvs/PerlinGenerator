@@ -213,10 +213,30 @@ int main(int argc, char **argv){
   if(argc>1){
     std::cout<<"WE SPECIFIED AN ARGUMENT!";
 
+
+
+
     Noise::setWidth(tools::convertStringToInt(argv[1]));
 
     if(argc>2)
-        Noise::setWidth(tools::convertStringToInt(argv[2]));
+        Noise::setHeight(tools::convertStringToInt(argv[2]));
+
+    if(argc>3)
+        Noise::setOctaveCount(tools::convertStringToInt(argv[3]));
+
+    if(argc>4)
+      Noise::setBackground(!(std::string(argv[4]) == "transparent"));
+
+
+    if(argc>5)
+        Noise::setPath(argv[5]);
+
+
+
+    }
+
+
+
 
   }
   // Basic init
