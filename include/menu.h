@@ -16,6 +16,7 @@
 #include "mouseListener.h"
 #include "tools.h"
 #include "state.h"
+#include "Noise.h"
 
 // Menu
 class menu : public state{
@@ -31,7 +32,7 @@ class menu : public state{
     ALLEGRO_FONT *menu_font;
     int width=800;
     int height=600;
-    float octave_count=6.5f;
+    int octave_count=7;
 
 
 

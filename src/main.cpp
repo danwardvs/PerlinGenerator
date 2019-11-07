@@ -209,6 +209,16 @@ void update(){
 
 // Start here
 int main(int argc, char **argv){
+
+  if(argc>1){
+    std::cout<<"WE SPECIFIED AN ARGUMENT!";
+
+    Noise::setWidth(tools::convertStringToInt(argv[1]));
+
+    if(argc>2)
+        Noise::setWidth(tools::convertStringToInt(argv[2]));
+
+  }
   // Basic init
   setup();
 

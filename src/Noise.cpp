@@ -86,6 +86,18 @@ void Noise::setParams(int newHeight, int newWidth, float newOctaveCount){
 
 }
 
+void Noise::setWidth(int newWidth){
+  Noise::width = newWidth;
+}
+
+void Noise::setHeight(int newHeight){
+  Noise::height = newHeight;
+}
+
+void Noise::setOctaveCount(int octaveCount){
+  Noise::octave_count = octaveCount;
+}
+
 void Noise::setDisplay(ALLEGRO_DISPLAY *newDisplay){
   display = newDisplay;
 }

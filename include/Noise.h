@@ -27,8 +27,15 @@ class Noise : public state{
     void update();
     void draw();
 
+    static void setWidth(int newWidth);
+    static void setHeight(int);
+    static void setOctaveCount(int);
     static void setParams(int newWidth, int newHeight, float newOctaveCount);
     static void setDisplay(ALLEGRO_DISPLAY *newDisplay);
+
+    static int getWidth(){return width;}
+    static int getHeight(){return height;}
+
   private:
 
     std::vector<std::vector<float>>  generate_white_noise(int,int);
